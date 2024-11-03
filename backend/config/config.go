@@ -11,13 +11,10 @@ import (
 var DB *pgx.Conn
 
 func Load() {
-    viper.SetConfigFile(".env")
 
-    if err:= viper.ReadInConfig(); err != nil {
-        log.Fatalf("Error reading .env file: %v", err)
-    }
+    viper.AutomaticEnv()
 
-    viper.SetDefault("APP_PORT", "8080")
+    // viper.SetDefault("APP_PORT", "8080")
 }
 
 func ConnectDatabase() {
