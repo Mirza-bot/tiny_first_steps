@@ -8,7 +8,7 @@ RUN go install github.com/air-verse/air@latest
 WORKDIR /app
 
 # Copy the Go module files and download dependencies
-COPY go.mod ./
+COPY go.mod go.sum ./
 RUN go mod download
 
 # Copy the rest of the source code
